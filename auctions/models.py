@@ -67,7 +67,7 @@ class Bid(models.Model):
         return f"{self.id}: {self.money} for {self.listing.title}"
     
 class Comment(models.Model):
-    text = models.TextField( blank=True, null=True)
+    text = models.TextField(blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments") 
     listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="comments") 
 
